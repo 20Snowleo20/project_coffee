@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="border-b-4 border-black">
+        <nav class="flex flex-col md:flex-row justify-between gap-3 md:gap-6 text-sm font-medium p-4 md:p-6 mb-4">
+            <div class="text-center md:text-left">Perfect Coffee Project</div>
+            <div class="flex flex-wrap justify-center gap-2 md:gap-6">
+                <a href="index.html" class="hover:underline">Главная</a>
+                <a href="index.html#aboutus" class="hover:underline">О нас</a>
+                <a href="index.html#table" class="hover:underline">Лидеры</a>
+                <a href="404.html" class="hover:underline">Рецепты</a>
+
+                <a href="FAQ.html" class="hover:underline">FAQ</a>
+                <a href="404.html" class="hover:underline">Профиль</a>
+
+            </div>
+            <div class="text-center md:text-right">Logo</div>
+        </nav>
+    </header>
+    <main class="text-slate-700 bg-cover bg-center bg-no-repeat"
+        style="background-image: url('assets/image/bg_fieldandsky.jpg')">
+        <div class="bg-white/50 p-4">
+            <section>
+                <h1 class="text-center py-6 md:text-2xl text-sm font-semibold">Контакты</h1>
+                <h2 class="text-center py-6 md:text-xl text-sm font-semibold">Есть вопросы или предложения? <br> Форма
+                    обратной связи уже здесь</h2>
+            </section>
+
+            <section class="bg-white border rounded-lg p-3 md:p-4 space-y-3 text-sm border-slate-900">
+                <h3 class="font-semibold text-center md:text-left">Заполните данные для отправки</h3>
+
+                <div>
+                    <label class="block mb-1 text-sm">Имя</label>
+                    <input type="text" placeholder="" class="w-full border rounded px-2 py-1 text-sm">
+                </div>
+                <div>
+                    <label class="block mb-1 text-sm">Данные почты</label>
+                    <input type="email" placeholder="youremail@yours.com"
+                        class="w-full border rounded px-2 py-1 text-slate-300">
+                </div>
+
+                <div>
+                    <label class="block mb-1 text-sm">Тематика обращения</label>
+                    <select class="w-full border rounded px-2 py-1 text-sm">
+                        <option>Вопрос к структуре сайта</option>
+                        <option>Вопросы по рецептам</option>
+                        <option>Предложение по сайту</option>
+                        <option>Предложение по другой тематике</option>
+                    </select>
+                </div>
+                <textarea rows="5" placeholder="Введите ваше сообщение"
+                    class="w-full border rounded px-2 py-1 text-sm"></textarea>
+                <div class="flex items-center">
+                    <label for="consent" class="text-sm px-2">Согласен на обработку данных</label>
+                    <input type="checkbox" id="consent" class="h-4 w-4 border rounded focus:ring-slate-700">
+                </div>
+                <button
+                    class="w-full text-white mt-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-900 active:bg-slate-500">
+                    Отправить
+                </button>
+
+            </section>
+        </div>
+        <div class = "flex items-center justify-center py-12">
+        <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A576e9ce95c1877e555958ee637c2cdbd8922fa38c2f551cb14a25631919fc552&amp;source=constructor"
+            width="80%" height="400" frameborder="0"></iframe>
+        </div>
+    </main>
+    <footer class="p-4 md:p-6 font-semibold text-center">
+        <p>Perfect Coffee Project<br>Проект по оценке кофе — 2026<br>По всем вопросам просьба обращаться по номеру:
+            8-___-___-__-__</p>
+    </footer>
+</body>
+
+</html>
