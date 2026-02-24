@@ -29,56 +29,82 @@
         style="background-image: url('assets/image/bg_fieldandsky.jpg')">
         <div class="bg-white/50 p-4">
             <section>
-                <h1 class="text-center py-6 md:text-2xl text-sm font-semibold">Контакты</h1>
-                <h2 class="text-center py-6 md:text-xl text-sm font-semibold">Есть вопросы или предложения? <br> Форма
+                <h1 class="text-center py-2 md:text-2xl text-sm font-semibold">Контакты</h1>
+                <h2 class="text-center py-2 md:text-xl text-sm font-semibold">Есть вопросы или предложения? <br> Форма
                     обратной связи уже здесь</h2>
             </section>
+            <form id="feedbackForm">
+                <section class="bg-white border rounded-lg p-3 md:p-4 space-y-3 text-sm border-slate-900">
+                    <h3 class="font-semibold text-center md:text-left">Заполните данные для отправки</h3>
 
-            <section class="bg-white border rounded-lg p-3 md:p-4 space-y-3 text-sm border-slate-900">
-                <h3 class="font-semibold text-center md:text-left">Заполните данные для отправки</h3>
+                    <div>
+                        <label for="fullname" class="block mb-1 text-sm">Имя <span class="text-red-500">*</span></label>
+                        <input id="fullname" type="text" placeholder="Иванов Иван Иванович"
+                            class="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="fullnameError" class="text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label for="number" class="block mb-1 text-sm">Номер телефона <span
+                                class="text-red-500">*</span></label>
+                        <input id="number" type="tel" placeholder="+7 (___) ___-__-__"
+                            class="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="numberError" class="text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-1 text-sm">Данные почты <span
+                                class="text-red-500">*</span></label>
+                        <input id="email" type="email" placeholder="youremail@yours.com"
+                            class="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <p id="emailError" class="text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
 
-                <div>
-                    <label class="block mb-1 text-sm">Имя</label>
-                    <input type="text" placeholder="" class="w-full border rounded px-2 py-1 text-sm">
-                </div>
-                <div>
-                    <label class="block mb-1 text-sm">Данные почты</label>
-                    <input type="email" placeholder="youremail@yours.com"
-                        class="w-full border rounded px-2 py-1 text-slate-300">
-                </div>
+                    <div>
+                        <label for="topic" class="block mb-1 text-sm">Тематика обращения</label>
+                        <select id="topic"
+                            class="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Выберите тему</option>
+                            <option>Вопрос к структуре сайта</option>
+                            <option>Вопросы по рецептам</option>
+                            <option>Предложение по сайту</option>
+                            <option>Предложение по другой тематике</option>
+                        </select>
+                        <p id="topicError" class="text-red-600 text-xs mt-1 hidden"></p>
+                    </div>
 
-                <div>
-                    <label class="block mb-1 text-sm">Тематика обращения</label>
-                    <select class="w-full border rounded px-2 py-1 text-sm">
-                        <option>Вопрос к структуре сайта</option>
-                        <option>Вопросы по рецептам</option>
-                        <option>Предложение по сайту</option>
-                        <option>Предложение по другой тематике</option>
-                    </select>
-                </div>
-                <textarea rows="5" placeholder="Введите ваше сообщение"
-                    class="w-full border rounded px-2 py-1 text-sm"></textarea>
-                <div class="flex items-center">
-                    <label for="consent" class="text-sm px-2">Согласен на обработку данных</label>
-                    <input type="checkbox" id="consent" class="h-4 w-4 border rounded focus:ring-slate-700">
-                </div>
-                <button
-                    class="w-full text-white mt-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-900 active:bg-slate-500">
-                    Отправить
-                </button>
+                    <textarea id="message" rows="4" placeholder="Введите ваше сообщение"
+                        class="w-full border rounded px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    <p id="messageError" class="text-red-600 text-xs mt-1 hidden"></p>
 
-            </section>
-        </div>
-        <div class = "flex items-center justify-center py-12">
-        <iframe
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A576e9ce95c1877e555958ee637c2cdbd8922fa38c2f551cb14a25631919fc552&amp;source=constructor"
-            width="80%" height="400" frameborder="0"></iframe>
-        </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="consent" class="h-4 w-4 border rounded focus:ring-slate-700">
+                        <label for="consent" class="text-sm px-2">Согласен на обработку данных <span
+                                class="text-red-500">*</span></label>
+                    </div>
+                    <p id="consentError" class="text-red-600 text-xs mt-1 hidden"></p>
+                    <div class="flex flex-col sm:flex-row sm:justify-between gap-6">
+                        <button type="submit"
+                            class="w-full sm:w-1/2 text-white mt-1 py-2 rounded-lg bg-slate-700 hover:bg-slate-900 active:bg-slate-500">
+                            Отправить
+                        </button>
+                        <button type="reset"
+                            class="w-full sm:w-1/2 text-slate-700 mt-1 py-2 rounded-lg bg-gray-300 hover:bg-gray-500 active:bg-slate-100">
+                            Очистить
+                        </button>
+                    </div>
+                </section>
+            </form>
+            <div class="flex items-center justify-center py-12">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A576e9ce95c1877e555958ee637c2cdbd8922fa38c2f551cb14a25631919fc552&amp;source=constructor"
+                    width="80%" height="400" frameborder="0"></iframe>
+            </div>
     </main>
     <footer class="p-4 md:p-6 font-semibold text-center">
         <p>Perfect Coffee Project<br>Проект по оценке кофе — 2026<br>По всем вопросам просьба обращаться по номеру:
             8-___-___-__-__</p>
     </footer>
+     <script src="scripts/validation.js"></script>
+     <script src="scripts/consoleLogger.js"></script>
 </body>
 
 </html>
